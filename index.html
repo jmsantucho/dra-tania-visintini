@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dra. Tania Visintini | Estudio jurídico penal en Tucumán</title>
+  <meta name="description" content="Defensa penal técnica, rigurosa y estratégica en San Miguel de Tucumán. Asesoramiento reservado en causas provinciales y federales bajo el Código Procesal Penal de Tucumán.">
+  <meta name="theme-color" content="#362226">
+
+  <!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       VARIABLES Y DESIGN TOKENS (INSPIRADOS EN EL TEMPLATE WIX & UI/UX PRO MAX)
+       ========================================================================== */
+    :root {
+      /* Paleta Principal: Espresso Cálido & Azul Polvo (Seraphina & Rowan inspired) */
+      --color-espresso: #362226;
+      --color-espresso-dark: #28181B;
+      --color-espresso-surface: #462E33;
+      --color-espresso-light: #52383E;
+      
+      --color-blue-accent: #A2E1FF;
+      --color-blue-hover: #BEE9FF;
+      --color-blue-dark: #0A2533;
+      
+      --color-cream-bg: #FAF8F5;
+      --color-cream-surface: #F3EFE9;
+      --color-cream-border: #E8E2D8;
+      
+      --color-white: #FFFFFF;
+      --color-text-main: #241D1E;
+      --color-text-muted: #6C6264;
+      --color-text-light: #F7F5F2;
+      --color-text-subtle: #A39B9D;
+      
+      --color-border-light: rgba(54, 34, 38, 0.09);
+      --color-border-dark: rgba(255, 255, 255, 0.12);
+      
+      /* Tipografía */
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-serif: 'EB Garamond', Georgia, serif;
+      
+      /* Espaciado y Radios */
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 9999px;
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.12);
+      
+      --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --max-width: 1220px;
+      --header-height: 80px;
+    }
+
+    /* ==========================================================================
+       RESET Y BASE
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text-main);
+      background-color: var(--color-cream-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 36px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        padding: 0 40px;
+      }
+    }
+
+    /* ==========================================================================
+       ENCABEZADO (NAVBAR)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--color-espresso);
+      border-bottom: 1px solid var(--color-border-dark);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      transition: background-color var(--transition), box-shadow var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--color-blue-accent);
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-sans);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--color-white);
+      line-height: 1.2;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--color-text-subtle);
+      letter-spacing: 0.04em;
+    }
+
+    /* Menú escritorio */
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 32px;
+    }
+
+    @media (min-width: 992px) {
+      .desktop-nav {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      color: #E6E1DC;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 6px 0;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--color-blue-accent);
+    }
+
+    /* Botón CTA Header */
+    .nav-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--color-blue-accent);
+      color: var(--color-blue-dark);
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 10px 22px;
+      border-radius: var(--radius-pill);
+      transition: background-color var(--transition), transform var(--transition);
+    }
+
+    .nav-cta-btn:hover {
+      background-color: var(--color-blue-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Botón Móvil Hamburguesa */
+    .mobile-menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      color: var(--color-white);
+      z-index: 110;
+    }
+
+    @media (min-width: 992px) {
+      .mobile-menu-toggle {
+        display: none;
+      }
+    }
+
+    .mobile-menu-toggle span {
+      display: block;
+      height: 2px;
+      width: 24px;
+      background-color: currentColor;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .mobile-menu-toggle.is-active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-toggle.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-toggle.is-active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Menú Móvil Desplegable */
+    .mobile-drawer {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background-color: var(--color-espresso);
+      border-bottom: 1px solid var(--color-border-dark);
+      padding: 24px 20px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transform: translateY(-120%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      z-index: 95;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .mobile-drawer.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #EDE8E4;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-nav-link:hover {
+      color: var(--color-blue-accent);
+    }
+
+    .mobile-drawer-cta {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+      padding: 14px;
+      font-size: 1rem;
+    }
+
+    /* ==========================================================================
+       HERO PRINCIPAL (ESTILO WIX SERAPHINA & ROWAN)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      background-color: var(--color-espresso);
+      color: var(--color-text-light);
+      padding-top: 76px;
+      padding-bottom: 84px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    @media (min-width: 992px) {
+      .hero-section {
+        padding-top: 104px;
+        padding-bottom: 112px;
+        min-height: 82vh;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    /* Fondo fotográfico con brillo bajo y tinte espresso noble */
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .hero-bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 36%;
+      filter: brightness(0.24) contrast(1.15) saturate(0.85);
+      transform: scale(1.02);
+      transition: transform 1.2s ease, filter 1.2s ease;
+      will-change: transform, opacity;
+    }
+
+    .hero-bg-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(35, 20, 23, 0.90) 0%,
+        rgba(54, 34, 38, 0.80) 45%,
+        rgba(35, 20, 23, 0.95) 100%
+      );
+    }
+
+    .hero-split-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: flex-end;
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: 992px) {
+      .hero-split-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 64px;
+        margin-bottom: 56px;
+      }
+    }
+
+    /* Columna Izquierda: Gran Título Display */
+    .hero-headline {
+      font-family: var(--font-sans);
+      font-size: clamp(2.35rem, 5.2vw, 4.3rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--color-white);
+      text-wrap: balance;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      font-family: var(--font-serif);
+      font-weight: 400;
+    }
+
+    /* Columna Derecha: Subtítulo y CTA Principal */
+    .hero-lead-col {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .hero-lead-text {
+      font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+      line-height: 1.55;
+      color: #E2DBD6;
+      font-weight: 300;
+      text-wrap: pretty;
+    }
+
+    /* Botón Hero en Azul Cielo Pastel */
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background-color: var(--color-blue-accent);
+      color: var(--color-blue-dark);
+      font-size: 0.96rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 16px rgba(162, 225, 255, 0.2);
+      transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      min-height: 48px;
+    }
+
+    .btn-hero-primary:hover {
+      background-color: var(--color-blue-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(162, 225, 255, 0.3);
+    }
+
+    .btn-hero-primary svg {
+      width: 16px;
+      height: 16px;
+      transition: transform var(--transition);
+    }
+
+    .btn-hero-primary:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Imagen Panorámica Hero Full-Width */
+    .hero-image-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: brightness(0.96) contrast(1.02);
+      transition: transform 0.8s ease;
+    }
+
+    @media (min-width: 768px) {
+      .hero-image {
+        height: 420px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .hero-image {
+        height: 520px;
+      }
+    }
+
+    /* ==========================================================================
+       SECCIÓN: TRAYECTORIA Y CIFRAS ("MILESTONES IN EXCELLENCE")
+       ========================================================================== */
+    .milestones-section {
+      background-color: var(--color-cream-bg);
+      padding: 72px 0;
+      border-bottom: 1px solid var(--color-cream-border);
+    }
+
+    @media (min-width: 992px) {
+      .milestones-section {
+        padding: 96px 0;
+      }
+    }
+
+    .milestones-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 992px) {
+      .milestones-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 60px;
+      }
+    }
+
+    .eyebrow-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-espresso);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--color-espresso);
+      line-height: 1.18;
+      text-wrap: balance;
+    }
+
+    .milestone-cards-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .milestone-cards-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .milestone-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-cream-border);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .milestone-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .milestone-card--full {
+      grid-column: 1 / -1;
+    }
+
+    .milestone-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-espresso);
+      letter-spacing: -0.02em;
+    }
+
+    .milestone-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-espresso);
+      letter-spacing: -0.01em;
+    }
+
+    .milestone-desc {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+
+    /* ==========================================================================
+       SECCIÓN: PERFIL PROFESIONAL Y FORMACIÓN ACADÉMICA
+       ========================================================================== */
+    .profile-section {
+      background-color: var(--color-white);
+      padding: 80px 0;
+      border-bottom: 1px solid var(--color-cream-border);
+    }
+
+    @media (min-width: 992px) {
+      .profile-section {
+        padding: 104px 0;
+      }
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 992px) {
+      .profile-grid {
+        grid-template-columns: 1fr 1.15fr;
+        gap: 60px;
+      }
+    }
+
+    .profile-bio-card {
+      background-color: var(--color-cream-surface);
+      border: 1px solid var(--color-cream-border);
+      border-radius: var(--radius-md);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+.profile-quote-lead {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      line-height: 1.45;
+      color: var(--color-espresso);
+      font-style: italic;
+    }
+
+    .profile-credentials-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .credential-item {
+      display: flex;
+      gap: 16px;
+      background-color: var(--color-cream-bg);
+      border: 1px solid var(--color-cream-border);
+      border-radius: var(--radius-md);
+      padding: 22px 20px;
+      transition: transform var(--transition), box-shadow var(--transition);
+      will-change: transform, opacity;
+    }
+
+    .credential-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .credential-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background-color: var(--color-white);
+      color: var(--color-espresso);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid var(--color-cream-border);
+    }
+
+    .credential-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .credential-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-espresso);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .credential-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       SECCIÓN: FILOSOFÍA DE DEFENSA ("OUR PHILOSOPHY")
+       ========================================================================== */
+    .philosophy-section {
+      background-color: var(--color-cream-surface);
+      padding: 80px 0;
+      position: relative;
+    }
+
+    @media (min-width: 992px) {
+      .philosophy-section {
+        padding: 110px 0;
+      }
+    }
+
+    .philosophy-box {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .philosophy-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.45rem, 2.8vw, 2.3rem);
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--color-espresso);
+      font-style: italic;
+      text-wrap: balance;
+    }
+
+    .philosophy-detail {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-text-muted);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* ==========================================================================
+       SECCIÓN: PRINCIPIOS RECTORES ("OUR CORE PRINCIPLES")
+       ========================================================================== */
+    .principles-section {
+      background-color: var(--color-cream-bg);
+      padding: 80px 0;
+    }
+
+    @media (min-width: 992px) {
+      .principles-section {
+        padding: 104px 0;
+      }
+    }
+
+    .section-header-centered {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .principles-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .principle-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-cream-border);
+      border-radius: var(--radius-md);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+    }
+
+    .principle-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(54, 34, 38, 0.2);
+    }
+
+    .principle-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background-color: var(--color-cream-surface);
+      color: var(--color-espresso);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+
+    .principle-icon-wrapper svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .principle-title {
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: var(--color-espresso);
+      letter-spacing: -0.015em;
+    }
+
+    .principle-text {
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+    }
+
+    /* ==========================================================================
+       SECCIÓN: ÁREAS DE ACTUACIÓN ("PORTFOLIO OF EXPERTISE")
+       ========================================================================== */
+    .expertise-section {
+      background-color: var(--color-cream-surface);
+      padding: 80px 0;
+      border-top: 1px solid var(--color-cream-border);
+      border-bottom: 1px solid var(--color-cream-border);
+    }
+
+    @media (min-width: 992px) {
+      .expertise-section {
+        padding: 104px 0;
+      }
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .expertise-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .expertise-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .expertise-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-cream-border);
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .expertise-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-espresso);
+      background-color: var(--color-cream-surface);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      align-self: flex-start;
+    }
+
+    .expertise-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-espresso);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .expertise-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       SECCIÓN: PREGUNTAS FRECUENTES ("PERSPECTIVES & INSIGHTS")
+       ========================================================================== */
+    .faq-section {
+      background-color: var(--color-cream-bg);
+      padding: 80px 0;
+    }
+
+    @media (min-width: 992px) {
+      .faq-section {
+        padding: 104px 0;
+      }
+    }
+
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-cream-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .faq-item.is-active {
+      border-color: rgba(54, 34, 38, 0.25);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-espresso);
+      background: none;
+      border: none;
+      cursor: pointer;
+      gap: 16px;
+      min-height: 48px;
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--color-espresso);
+      flex-shrink: 0;
+      transition: transform var(--transition);
+    }
+
+    .faq-item.is-active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+      padding: 0 24px;
+      font-size: 0.94rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+
+    .faq-item.is-active .faq-content {
+      padding-bottom: 24px;
+    }
+
+    /* ==========================================================================
+       SECCIÓN: FORMULARIO Y CONTACTO ("BEGIN A CONVERSATION")
+       ========================================================================== */
+    .contact-section {
+      background-color: var(--color-espresso);
+      color: var(--color-text-light);
+      padding: 80px 0;
+      position: relative;
+    }
+
+    @media (min-width: 992px) {
+      .contact-section {
+        padding: 110px 0;
+      }
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    @media (min-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 64px;
+        align-items: flex-start;
+      }
+    }
+
+    .contact-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-info-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 500;
+      color: var(--color-white);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-info-desc {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #E2DBD6;
+      font-weight: 300;
+    }
+
+    .contact-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border-dark);
+    }
+
+    .contact-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-detail-icon {
+      width: 22px;
+      height: 22px;
+      color: var(--color-blue-accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .contact-detail-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-subtle);
+      margin-bottom: 2px;
+    }
+
+    .contact-detail-value {
+      font-size: 0.98rem;
+      color: var(--color-white);
+      font-weight: 500;
+    }
+
+    .contact-detail-value a:hover {
+      color: var(--color-blue-accent);
+    }
+
+    /* Caja del Formulario */
+    .contact-form-card {
+      background-color: var(--color-espresso-surface);
+      border: 1px solid var(--color-border-dark);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (min-width: 640px) {
+      .contact-form-card {
+        padding: 40px 36px;
+      }
+    }
+
+    .form-heading {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--color-white);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .form-subheading {
+      font-size: 0.88rem;
+      color: #DDD4CF;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #EDE7E3;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-sm);
+      color: var(--color-white);
+      font-family: inherit;
+      font-size: 1rem; /* Evita auto-zoom en iOS */
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color var(--transition), background-color var(--transition);
+      min-height: 48px;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--color-blue-accent);
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .form-select option {
+      background-color: var(--color-espresso-dark);
+      color: var(--color-white);
+    }
+
+    .form-textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      background-color: var(--color-blue-accent);
+      color: var(--color-blue-dark);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 24px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(162, 225, 255, 0.2);
+      transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      min-height: 52px;
+      margin-top: 8px;
+    }
+
+    .form-submit-btn:hover {
+      background-color: var(--color-blue-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(162, 225, 255, 0.35);
+    }
+
+    .form-privacy-note {
+      font-size: 0.78rem;
+      color: var(--color-text-subtle);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       PIE DE PÁGINA (FOOTER)
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--color-espresso-dark);
+      color: var(--color-text-subtle);
+      padding: 56px 0 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.88rem;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      margin-bottom: 44px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-top-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 48px;
+      }
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-white);
+      margin-bottom: 10px;
+    }
+
+    .footer-brand-desc {
+      line-height: 1.6;
+      color: #C7C0BE;
+      max-width: 380px;
+    }
+
+    .footer-col-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-white);
+      margin-bottom: 16px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links-list a {
+      color: #B5ADAB;
+    }
+
+    .footer-links-list a:hover {
+      color: var(--color-blue-accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    /* ==========================================================================
+       BARRA FIJA DE CONVERSIÓN MÓVIL (MOBILE STICKY ACTION BAR)
+       ========================================================================== */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(40, 24, 27, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      z-index: 90;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (min-width: 992px) {
+      .mobile-sticky-bar {
+        display: none;
+      }
+    }
+
+    .mobile-sticky-wa-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--color-blue-accent);
+      color: var(--color-blue-dark);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 12px 16px;
+      border-radius: var(--radius-pill);
+      min-height: 48px;
+    }
+
+    .mobile-sticky-call-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-pill);
+      background-color: rgba(255, 255, 255, 0.12);
+      color: var(--color-white);
+      flex-shrink: 0;
+    }
+
+    .mobile-sticky-call-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* ==========================================================================
+       ANIMACIONES FLUIDAS DE REVELACIÓN (SCROLL & LOAD - ESTILO WIX)
+       ========================================================================== */
+    .hero-headline,
+    .hero-lead-text,
+    .btn-hero-primary,
+    .hero-image-wrapper,
+    .milestone-card,
+    .principle-card,
+    .expertise-card,
+    .faq-item,
+    .contact-form-card {
+      will-change: transform, opacity;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* Fallback sin JavaScript o sin GSAP */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       BARRA DE NAVEGACIÓN SUPERIOR
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      
+      <!-- Marca y Logotipo -->
+      <a href="#" class="brand-link" aria-label="Dra. Tania Visintini - Inicio">
+        <svg class="brand-logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/>
+          <path d="M16 6V26M10 11H22M10 16H22M12 21H20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">Dra. Tania Visintini</span>
+          <span class="brand-subtitle">Estudio jurídico penal</span>
+        </div>
+      </a>
+
+      <!-- Menú Escritorio -->
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#trayectoria" class="nav-link">Trayectoria</a>
+        <a href="#perfil" class="nav-link">Perfil profesional</a>
+        <a href="#principios" class="nav-link">Principios</a>
+        <a href="#areas" class="nav-link">Áreas de actuación</a>
+        <a href="#preguntas" class="nav-link">Preguntas frecuentes</a>
+        <a href="#contacto" class="nav-cta-btn">
+          <span>Solicitar consulta</span>
+        </a>
+      </nav>
+
+      <!-- Botón Menú Móvil -->
+      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Menú Desplegable Móvil -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <a href="#trayectoria" class="mobile-nav-link">Trayectoria</a>
+    <a href="#perfil" class="mobile-nav-link">Perfil profesional</a>
+    <a href="#principios" class="mobile-nav-link">Principios</a>
+    <a href="#areas" class="mobile-nav-link">Áreas de actuación</a>
+    <a href="#preguntas" class="mobile-nav-link">Preguntas frecuentes</a>
+    <a href="#contacto" class="nav-cta-btn mobile-drawer-cta">Solicitar consulta</a>
+  </div>
+
+  <main id="contenido-principal">
+
+    <!-- ========================================================================
+         HERO SECTION: INSPIRADO EN WIX CON FONDO FOTOGRÁFICO DE BRILLO BAJO
+         ======================================================================== -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <!-- Fondo Fotográfico con Brillo Bajo y Tinte Espresso Noble -->
+      <div class="hero-bg-overlay" aria-hidden="true">
+        <img src="hero-estudio.jpg" alt="" class="hero-bg-image" loading="eager" width="1200" height="896">
+        <div class="hero-bg-gradient"></div>
+      </div>
+
+      <div class="container">
+        
+        <!-- Rejilla Dividida: Título Display Izquierda + Párrafo & CTA Derecha -->
+        <div class="hero-split-grid" style="margin-bottom: 0;">
+          
+          <div class="hero-title-col">
+            <span class="eyebrow-label" style="color: var(--color-blue-accent);">Fuero penal provincial y federal • San Miguel de Tucumán</span>
+            <h1 id="hero-title" class="hero-headline">
+              Defensa penal técnica, <em>rigurosa</em> y estratégica en Tucumán
+            </h1>
+          </div>
+
+          <div class="hero-lead-col">
+            <p class="hero-lead-text">
+              Representación jurídica personalizada en causas penales complejas, audiencias orales y medidas cautelares bajo el Código Procesal Penal de Tucumán. Asesoramiento reservado y fundamentado para la tutela efectiva de sus derechos.
+            </p>
+            <a href="#contacto" class="btn-hero-primary">
+              <span>Iniciar una consulta</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN: TRAYECTORIA Y CIFRAS ("MILESTONES IN EXCELLENCE")
+         ======================================================================== -->
+    <section id="trayectoria" class="milestones-section" aria-labelledby="milestones-title">
+      <div class="container">
+        <div class="milestones-grid">
+          
+          <!-- Columna Izquierda: Encabezado Editorial -->
+          <div class="section-header-reveal">
+            <span class="eyebrow-label">Trayectoria procesal</span>
+            <h2 id="milestones-title" class="section-title">
+              Rigor técnico en cada instancia procesal
+            </h2>
+            <p style="margin-top: 16px; color: var(--color-text-muted); font-size: 1.02rem; line-height: 1.6;">
+              Intervención letrada de alta intensidad estratégica. Cada causa penal se aborda con dedicación individualizada, examen probatorio minucioso y litigación técnica ante los tribunales provinciales y federales.
+            </p>
+          </div>
+
+          <!-- Columna Derecha: Tarjetas de Hitos y Cobertura -->
+          <div class="milestone-cards-list">
+            
+            <div class="milestone-card">
+              <span class="milestone-number">CPPT</span>
+              <h3 class="milestone-heading">Fueros provincial y federal</h3>
+              <p class="milestone-desc">
+                Actuación bajo el sistema acusatorio adversarial de Tucumán (Ley 8933) en Capital, Concepción y Monteros, y fuero federal.
+              </p>
+            </div>
+
+            <div class="milestone-card">
+              <span class="milestone-number">100%</span>
+              <h3 class="milestone-heading">Atención letrada directa</h3>
+              <p class="milestone-desc">
+                Conducción estratégica personal a cargo de la titular del estudio en cada audiencia oral y articulación probatoria.
+              </p>
+            </div>
+
+            <div class="milestone-card milestone-card--full">
+              <span class="milestone-number">Cita previa</span>
+              <h3 class="milestone-heading">Confidencialidad y reserva absoluta</h3>
+              <p class="milestone-desc">
+                Entrevistas presenciales en San Miguel de Tucumán o por videoconferencia protegidas bajo el secreto profesional legal (Ley provincial 5.233).
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN: PERFIL PROFESIONAL Y FORMACIÓN ACADÉMICA (SOBRE MÍ)
+         ======================================================================== -->
+    <section id="perfil" class="profile-section" aria-labelledby="profile-title">
+      <div class="container">
+        
+        <div class="profile-grid">
+          
+          <!-- Columna Izquierda: Presentación y Ejercicio Individual -->
+          <div class="profile-bio-card">
+            <h2 id="profile-title" class="section-title" style="font-size: clamp(1.85rem, 2.8vw, 2.4rem);">
+              Dra. Tania Visintini
+            </h2>
+
+            <p class="profile-quote-lead">
+              «El ejercicio individual y especializado de la defensa penal asegura un compromiso pleno con cada causa, garantizando que quien diseña la estrategia técnica sea quien la defienda en cada audiencia oral ante los jueces.»
+            </p>
+
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.65;">
+              Abogada penalista con dedicación exclusiva al litigio penal en la provincia de Tucumán. Su práctica se distingue por el estudio minucioso de cada legajo de investigación, el trato cercano y transparente con el representado, y la defensa irrestricta de las garantías constitucionales bajo el sistema acusatorio.
+            </p>
+          </div>
+
+          <!-- Columna Derecha: Formación Académica y Antecedentes -->
+          <div>
+            <div class="section-header-reveal" style="margin-bottom: 24px;">
+              <span class="eyebrow-label">Formación técnica y trayectoria</span>
+              <h3 class="section-title" style="font-size: clamp(1.6rem, 2.4vw, 2.1rem);">
+                Perfil profesional y antecedentes académicos
+              </h3>
+            </div>
+
+            <div class="profile-credentials-list">
+              
+              <!-- Credencial 1: Título de Grado -->
+              <div class="credential-item">
+                <div class="credential-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="credential-title">Abogada — Universidad Nacional de Tucumán</h4>
+                  <p class="credential-desc">
+                    Graduada de la Facultad de Derecho y Ciencias Sociales (UNT). Matrícula profesional habilitante del Colegio de Abogados de Tucumán.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Credencial 2: Especialización Penal -->
+              <div class="credential-item">
+                <div class="credential-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="credential-title">Especialización en Derecho Penal y Ciencias Penales</h4>
+                  <p class="credential-desc">
+                    Formación de posgrado orientada a la dogmática penal aplicada, teoría del delito, imputación objetiva y litigación en causas de alta complejidad.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Credencial 3: Litigación Adversarial -->
+              <div class="credential-item">
+                <div class="credential-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="credential-title">Diplomatura en Litigación Adversarial y Juicio Oral</h4>
+                  <p class="credential-desc">
+                    Especialización práctica en examen y contraexamen de testigos y peritos, objeciones probatorias, alegatos de apertura y clausura bajo el Código Procesal Penal de Tucumán (Ley 8933).
+                  </p>
+                </div>
+              </div>
+
+              <!-- Credencial 4: Competencia Jurisdiccional -->
+              <div class="credential-item">
+                <div class="credential-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="credential-title">Competencia en fueros provincial y federal</h4>
+                  <p class="credential-desc">
+                    Habilitación y actuación constante ante los Centros Judiciales de Capital, Concepción y Monteros, y el Tribunal Oral en lo Criminal Federal de Tucumán.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN: FILOSOFÍA DE TRABAJO ("OUR PHILOSOPHY")
+         ======================================================================== -->
+    <section class="philosophy-section" aria-labelledby="philosophy-title">
+      <div class="container">
+        <div class="philosophy-box">
+          <span class="eyebrow-label">Criterio y filosofía de defensa</span>
+          <h2 id="philosophy-title" class="philosophy-quote">
+            «La tutela efectiva de la libertad y el honor exige una estrategia técnica inquebrantable, fundamentada en el análisis riguroso de la prueba y la defensa irrestricta de las garantías constitucionales.»
+          </h2>
+          <p class="philosophy-detail">
+            En el proceso penal contemporáneo, una defensa eficaz no depende de respuestas improvisadas, sino de la anticipación procesal, el control meticuloso del legajo de investigación fiscal y la serenidad técnica en las audiencias orales. Brinda a cada persona un asesoramiento riguroso, claro y de máxima cercanía humana.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN: PRINCIPIOS RECTORES ("OUR CORE PRINCIPLES")
+         ======================================================================== -->
+    <section id="principios" class="principles-section" aria-labelledby="principles-title">
+      <div class="container">
+        
+        <div class="section-header-centered section-header-reveal">
+          <span class="eyebrow-label">Criterio profesional</span>
+          <h2 id="principles-title" class="section-title">
+            Principios rectores de la defensa
+          </h2>
+          <p style="color: var(--color-text-muted); font-size: 1rem;">
+            Cuatro pilares metodológicos que orientan la intervención técnica en cada etapa de la causa.
+          </p>
+        </div>
+
+        <div class="principles-grid">
+          
+          <!-- Pilar 1 -->
+          <div class="principle-card">
+            <div class="principle-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m4.93 4.93 4.24 4.24"></path>
+                <path d="m14.83 9.17 4.24-4.24"></path>
+                <path d="m14.83 14.83 4.24 4.24"></path>
+                <path d="m9.17 14.83-4.24 4.24"></path>
+              </svg>
+            </div>
+            <h3 class="principle-title">Estrategia procesal integral</h3>
+            <p class="principle-text">
+              Construcción de una teoría del caso coherente desde la primera intervención. Examen detallado de evidencias y preparación técnica para audiencias ante el Colegio de Jueces.
+            </p>
+          </div>
+
+          <!-- Pilar 2 -->
+          <div class="principle-card">
+            <div class="principle-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="principle-title">Discreción y secreto profesional</h3>
+            <p class="principle-text">
+              Amparo irrestricto bajo el secreto profesional de la Ley 5.233. Toda consulta, documentación y antecedente permanecen en el más estricto ámbito de reserva y confidencialidad.
+            </p>
+          </div>
+
+          <!-- Pilar 3 -->
+          <div class="principle-card">
+            <div class="principle-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="principle-title">Intervención cautelar temprana</h3>
+            <p class="principle-text">
+              Actuación diligente en audiencias de control de aprehensión, formalización de cargos y peticiones de cese de prisión preventiva o modalidades de coerción no privativas de la libertad.
+            </p>
+          </div>
+
+          <!-- Pilar 4 -->
+          <div class="principle-card">
+            <div class="principle-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="principle-title">Claridad y transparencia arancelaria</h3>
+            <p class="principle-text">
+              Convenios de honorarios pactados con antelación y previsibilidad, sujetos a la Ley Arancelaria de Tucumán 5.480, sin costos imprevistos ni ambigüedades.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN: ÁREAS DE ACTUACIÓN ("PORTFOLIO OF EXPERTISE")
+         ======================================================================== -->
+    <section id="areas" class="expertise-section" aria-labelledby="areas-title">
+      <div class="container">
+        
+        <div class="section-header-centered section-header-reveal">
+          <span class="eyebrow-label">Especialización letrada</span>
+          <h2 id="areas-title" class="section-title">
+            Áreas de actuación en materia penal
+          </h2>
+          <p style="color: var(--color-text-muted); font-size: 1rem;">
+            Asistencia jurídica especializada en las diversas ramas del derecho penal provincial y federal.
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+          
+          <!-- Card 1 -->
+          <div class="expertise-card">
+            <div>
+              <span class="expertise-tag">Medidas cautelares</span>
+              <h3 class="expertise-title" style="margin-top: 12px;">Excarcelaciones y ceses de coerción</h3>
+              <p class="expertise-desc" style="margin-top: 10px;">
+                Audiencias de control de detención, impugnación de prisión preventiva, solicitud de arresto domiciliario y medidas sustitutivas conforme al CPPT.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="expertise-card">
+            <div>
+              <span class="expertise-tag">Fuero penal ordinario</span>
+              <h3 class="expertise-title" style="margin-top: 12px;">Delitos contra las personas</h3>
+              <p class="expertise-desc" style="margin-top: 10px;">
+                Defensa y patrocinio letrado en causas de homicidios, lesiones, legítima defensa, violencia de género y siniestros viales con consecuencias penales.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="expertise-card">
+            <div>
+              <span class="expertise-tag">Derecho penal patrimonial</span>
+              <h3 class="expertise-title" style="margin-top: 12px;">Delitos contra la propiedad y económicos</h3>
+              <p class="expertise-desc" style="margin-top: 10px;">
+                Abordaje técnico en estafas, defraudaciones, administración fraudulenta, abusos de confianza y litigios societarios con derivación criminal.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="expertise-card">
+            <div>
+              <span class="expertise-tag">Jurisdicción federal</span>
+              <h3 class="expertise-title" style="margin-top: 12px;">Fuero penal federal</h3>
+              <p class="expertise-desc" style="margin-top: 10px;">
+                Litigación especializada en causas por infracción a la Ley de Estupefacientes (Ley 23.737), contrabando, delitos tributarios y aduaneros.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="expertise-card">
+            <div>
+              <span class="expertise-tag">Litigación oral</span>
+              <h3 class="expertise-title" style="margin-top: 12px;">Juicio oral y audiencias de debate</h3>
+              <p class="expertise-desc" style="margin-top: 10px;">
+                Examen directo y contraexamen de peritos y testigos, alegatos de apertura y clausura, y acuerdos de juicio abreviado ante el Colegio de Jueces.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="expertise-card">
+            <div>
+              <span class="expertise-tag">Vías impugnativas</span>
+              <h3 class="expertise-title" style="margin-top: 12px;">Recursos procesales y casación</h3>
+              <p class="expertise-desc" style="margin-top: 10px;">
+                Interposición y sostenimiento de recursos de apelación, impugnaciones ordinarias y recursos extraordinarios de casación ante la Corte Suprema de Justicia de Tucumán.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN: PREGUNTAS FRECUENTES ("PERSPECTIVES & INSIGHTS")
+         ======================================================================== -->
+    <section id="preguntas" class="faq-section" aria-labelledby="faq-title">
+      <div class="container faq-container">
+        
+        <div class="section-header-centered section-header-reveal">
+          <span class="eyebrow-label">Guía e información procesal</span>
+          <h2 id="faq-title" class="section-title">
+            Preguntas frecuentes sobre el proceso penal en Tucumán
+          </h2>
+          <p style="color: var(--color-text-muted); font-size: 1rem;">
+            Respuestas claras a las dudas habituales de quienes afrontan una investigación o citación letrada.
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faq-accordion">
+          
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Qué hacer ante una citación o detención en Tucumán?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>
+                Toda persona citada o aprehendida tiene el derecho constitucional de guardar silencio y no declarar sin la presencia de un abogado defensor particular de su confianza. Debe solicitar de inmediato la comunicación con su letrado antes de firmar cualquier acta judicial o policial.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Cómo se coordina la atención y las consultas?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>
+                El estudio atiende de lunes a viernes en horario hábil exclusivamente con cita previa, lo que garantiza el tiempo necesario para el estudio pormenorizado del caso y absoluta puntualidad y reserva para cada cliente.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Cómo se determinan los honorarios profesionales?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>
+                Los honorarios se establecen mediante un convenio claro y transparente, estructurado de acuerdo con la complejidad del caso y los aranceles vigentes regulados por la Ley Arancelaria de Tucumán 5.480. No existen cobros imprevistos.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Qué resguardo de confidencialidad ampara a mi consulta?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>
+                Toda comunicación, informe y documentación remitida está resguardada por el secreto profesional legal (Ley 5.233). La obligación de reserva rige desde el primer contacto, independientemente de que se formalice o no la designación defensiva.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN: INICIAR UNA CONVERSACIÓN / CONTACTO ("BEGIN A CONVERSATION")
+         ======================================================================== -->
+    <section id="contacto" class="contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- Columna Izquierda: Información de Contacto -->
+          <div class="contact-info-col">
+            <div>
+              <span class="eyebrow-label" style="color: var(--color-blue-accent);">Consulta confidencial</span>
+              <h2 id="contact-title" class="contact-info-title">
+                Iniciar una conversación letrada
+              </h2>
+            </div>
+            
+            <p class="contact-info-desc">
+              Complete el formulario con los detalles generales de su situación o causa. Recibirá respuesta personalizada a la brevedad para coordinar una entrevista presencial o virtual con la Dra. Tania Visintini.
+            </p>
+
+            <div class="contact-details-list">
+              
+              <div class="contact-detail-item">
+                <svg class="contact-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div>
+                  <div class="contact-detail-label">Sede profesional</div>
+                  <div class="contact-detail-value">Barrio Norte / Tribunales, San Miguel de Tucumán</div>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <svg class="contact-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div>
+                  <div class="contact-detail-label">Horarios de atención</div>
+                  <div class="contact-detail-value">Lunes a viernes de 8:00 a 19:00 hs (con cita previa)</div>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <svg class="contact-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <div>
+                  <div class="contact-detail-label">Teléfono directo y WhatsApp</div>
+                  <div class="contact-detail-value">
+                    <a href="https://wa.me/5493811234567" target="_blank" rel="noopener noreferrer">+54 9 381 123-4567</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Columna Derecha: Tarjeta de Formulario con Reenvío a WhatsApp -->
+          <div class="contact-form-card">
+            <h3 class="form-heading">Solicitud de consulta profesional</h3>
+            <p class="form-subheading">Los datos enviados se remitirán de forma directa y reservada directamente al canal oficial de WhatsApp de la profesional.</p>
+
+            <form id="consulta-form" novalidate>
+              
+              <div class="form-group">
+                <label for="campo-nombre" class="form-label">Nombre y apellido *</label>
+                <input type="text" id="campo-nombre" name="nombre" class="form-input" placeholder="Ej. Juan Pérez" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="campo-telefono" class="form-label">Teléfono / WhatsApp de contacto *</label>
+                <input type="tel" id="campo-telefono" name="telefono" class="form-input" placeholder="Ej. 381 555 1234" required autocomplete="tel">
+              </div>
+
+              <div class="form-group">
+                <label for="campo-etapa" class="form-label">Fuero o situación procesal *</label>
+                <select id="campo-etapa" name="etapa" class="form-select" required>
+                  <option value="" disabled selected>Seleccione la situación actual</option>
+                  <option value="Investigación inicial / IPP">Investigación inicial o notificación fiscal (IPP)</option>
+                  <option value="Audiencia cautelar o detención">Audiencia cautelar o pedido de excarcelación</option>
+                  <option value="Juicio oral o debate">Preparación de juicio oral o debate</option>
+                  <option value="Fuero federal">Causa ante la Justicia Federal</option>
+                  <option value="Recurso o impugnación">Recurso de apelación o casación</option>
+                  <option value="Otra consulta penal">Otra consulta o asesoramiento preventivo</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="campo-mensaje" class="form-label">Breve detalle de la consulta (opcional)</label>
+                <textarea id="campo-mensaje" name="mensaje" class="form-textarea" placeholder="Describa brevemente la situación o tribunal interviniente..."></textarea>
+              </div>
+
+              <button type="submit" class="form-submit-btn">
+                <span>Enviar consulta por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+
+              <p class="form-privacy-note">
+                Sus datos son tratados con estricta confidencialidad bajo el secreto profesional de la abogacía (Ley 5.233).
+              </p>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       PIE DE PÁGINA (FOOTER)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <div>
+          <div class="footer-brand-title">Dra. Tania Visintini</div>
+          <p class="footer-brand-desc">
+            Abogada penalista matriculada en el Colegio de Abogados de Tucumán. Especialista en litigación acusatoria, audiencias orales y defensa de garantías constitucionales.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navegación</div>
+          <ul class="footer-links-list">
+            <li><a href="#trayectoria">Trayectoria</a></li>
+            <li><a href="#perfil">Perfil profesional</a></li>
+            <li><a href="#principios">Principios</a></li>
+            <li><a href="#areas">Áreas de actuación</a></li>
+            <li><a href="#preguntas">Preguntas frecuentes</a></li>
+            <li><a href="#contacto">Solicitar consulta</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Marco legal</div>
+          <ul class="footer-links-list">
+            <li><span>Código Procesal Penal de Tucumán (Ley 8933)</span></li>
+            <li><span>Régimen Arancelario (Ley provincial 5.480)</span></li>
+            <li><span>Secreto profesional letrado (Ley 5.233)</span></li>
+            <li><span>San Miguel de Tucumán, Argentina</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Dra. Tania Visintini. Todos los derechos reservados.
+        </div>
+        <div>
+          Atención jurídica presencial y telemática con cita previa.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       BARRA DE CONVERSIÓN RÁPIDA FIJA PARA DISPOSITIVOS MÓVILES
+       ======================================================================== -->
+  <aside class="mobile-sticky-bar" aria-label="Acceso rápido móvil">
+    <a href="tel:+5493811234567" class="mobile-sticky-call-btn" aria-label="Llamar al estudio jurídico">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+    </a>
+    <a href="#contacto" class="mobile-sticky-wa-btn" id="mobile-sticky-btn">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+      <span>Consultar por WhatsApp</span>
+    </a>
+  </aside>
+
+  <!-- Bibliotecas de Animación GSAP 3 y ScrollTrigger (animaciones fluidas de textos y cuadros) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- ========================================================================
+       LÓGICA JAVASCRIPT: NAVEGACIÓN MÓVIL, ACCORDION Y WHATSAPP
+       ======================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Menú Móvil
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-drawer-cta');
+
+      if (mobileToggle && mobileDrawer) {
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = mobileToggle.classList.toggle('is-active');
+          mobileDrawer.classList.toggle('is-open', isOpen);
+          mobileToggle.setAttribute('aria-expanded', isOpen);
+          mobileDrawer.setAttribute('aria-hidden', !isOpen);
+        });
+
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileToggle.classList.remove('is-active');
+            mobileDrawer.classList.remove('is-open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileDrawer.setAttribute('aria-hidden', 'true');
+          });
+        });
+      }
+
+      // 2. Acordeón de Preguntas Frecuentes
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+
+        trigger.addEventListener('click', () => {
+          const isActive = item.classList.contains('is-active');
+
+          // Cerrar otros acordeones
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('is-active');
+              otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+              otherItem.querySelector('.faq-content').style.maxHeight = null;
+            }
+          });
+
+          // Conmutar el seleccionado
+          if (!isActive) {
+            item.classList.add('is-active');
+            trigger.setAttribute('aria-expanded', 'true');
+            content.style.maxHeight = content.scrollHeight + 32 + 'px';
+          } else {
+            item.classList.remove('is-active');
+            trigger.setAttribute('aria-expanded', 'false');
+            content.style.maxHeight = null;
+          }
+        });
+      });
+
+
+      // 4. Animaciones de Revelación de Textos y Cuadros (Scroll & Load)
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion && typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // A. Animación de entrada en Hero (al cargar la página)
+        const heroTimeline = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+        heroTimeline
+          .from('.site-header', {
+            y: -20,
+            opacity: 0,
+            duration: 0.6
+          })
+          .from('.hero-title-col .eyebrow-label', {
+            y: 16,
+            opacity: 0,
+            duration: 0.5
+          }, '-=0.25')
+          .from('.hero-headline', {
+            y: 36,
+            opacity: 0,
+            duration: 0.85
+          }, '-=0.35')
+          .from('.hero-lead-text', {
+            y: 24,
+            opacity: 0,
+            duration: 0.7
+          }, '-=0.55')
+          .from('.btn-hero-primary', {
+            y: 20,
+            opacity: 0,
+            duration: 0.6
+          }, '-=0.45')
+          .from('.hero-bg-image', {
+            opacity: 0,
+            scale: 1.06,
+            duration: 1.3,
+            ease: 'power2.out'
+          }, 0);
+
+        // B. Revelación de Encabezados de Sección (Eyebrow + Título + Párrafo)
+        gsap.utils.toArray('.section-header-reveal').forEach(header => {
+          gsap.from(header.children, {
+            scrollTrigger: {
+              trigger: header,
+              start: 'top 88%',
+              once: true
+            },
+            y: 28,
+            opacity: 0,
+            duration: 0.75,
+            stagger: 0.12,
+            ease: 'power2.out'
+          });
+        });
+
+
+        // Revelación de Perfil Profesional y Formación
+        gsap.from('.profile-bio-card', {
+          scrollTrigger: {
+            trigger: '.profile-section',
+            start: 'top 85%',
+            once: true
+          },
+          y: 32,
+          opacity: 0,
+          duration: 0.75,
+          ease: 'power2.out'
+        });
+
+        gsap.from('.credential-item', {
+          scrollTrigger: {
+            trigger: '.profile-credentials-list',
+            start: 'top 85%',
+            once: true
+          },
+          y: 28,
+          opacity: 0,
+          duration: 0.65,
+          stagger: 0.1,
+          ease: 'power2.out'
+        });
+
+        // C. Revelación escalonada de Tarjetas en Trayectoria (Milestones)
+        gsap.from('.milestone-card', {
+          scrollTrigger: {
+            trigger: '.milestone-cards-list',
+            start: 'top 85%',
+            once: true
+          },
+          y: 32,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.12,
+          ease: 'power2.out'
+        });
+
+        // D. Revelación de Cita de Filosofía
+        gsap.from('.philosophy-box > *', {
+          scrollTrigger: {
+            trigger: '.philosophy-box',
+            start: 'top 85%',
+            once: true
+          },
+          y: 26,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power2.out'
+        });
+
+        // E. Revelación escalonada de Tarjetas en Principios Rectores
+        gsap.from('.principle-card', {
+          scrollTrigger: {
+            trigger: '.principles-grid',
+            start: 'top 85%',
+            once: true
+          },
+          y: 36,
+          scale: 0.98,
+          opacity: 0,
+          duration: 0.75,
+          stagger: 0.1,
+          ease: 'power2.out'
+        });
+
+        // F. Revelación escalonada de Tarjetas en Áreas de Actuación
+        gsap.from('.expertise-card', {
+          scrollTrigger: {
+            trigger: '.expertise-grid',
+            start: 'top 85%',
+            once: true
+          },
+          y: 36,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.08,
+          ease: 'power2.out'
+        });
+
+        // G. Revelación escalonada de Preguntas Frecuentes
+        gsap.from('.faq-item', {
+          scrollTrigger: {
+            trigger: '.faq-accordion',
+            start: 'top 88%',
+            once: true
+          },
+          y: 24,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: 'power2.out'
+        });
+
+        // H. Revelación en Sección de Contacto
+        gsap.from('.contact-info-col > *', {
+          scrollTrigger: {
+            trigger: '.contact-section',
+            start: 'top 82%',
+            once: true
+          },
+          y: 26,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: 'power2.out'
+        });
+
+        gsap.from('.contact-form-card', {
+          scrollTrigger: {
+            trigger: '.contact-form-card',
+            start: 'top 85%',
+            once: true
+          },
+          y: 36,
+          scale: 0.98,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out'
+        });
+
+      } else if (!prefersReducedMotion) {
+        // Fallback ligero con IntersectionObserver si no carga la biblioteca externa
+        const fallbackObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              fallbackObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.milestone-card, .principle-card, .expertise-card, .faq-item, .contact-form-card').forEach(el => {
+          el.classList.add('reveal-on-scroll');
+          fallbackObserver.observe(el);
+        });
+      }
+
+      // 3. Envío del Formulario a WhatsApp con Validación
+      const consultaForm = document.getElementById('consulta-form');
+      const NUMERO_WHATSAPP = '5493811234567'; // Reemplazar con el número oficial de la Dra. Tania Visintini
+
+      if (consultaForm) {
+        consultaForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const nombreInput = document.getElementById('campo-nombre');
+          const telefonoInput = document.getElementById('campo-telefono');
+          const etapaSelect = document.getElementById('campo-etapa');
+          const mensajeTextarea = document.getElementById('campo-mensaje');
+
+          const nombre = nombreInput.value.trim();
+          const telefono = telefonoInput.value.trim();
+          const etapa = etapaSelect.value;
+          const mensaje = mensajeTextarea.value.trim();
+
+          if (!nombre) {
+            alert('Por favor, ingrese su nombre y apellido.');
+            nombreInput.focus();
+            return;
+          }
+
+          if (!telefono) {
+            alert('Por favor, ingrese un teléfono o WhatsApp de contacto.');
+            telefonoInput.focus();
+            return;
+          }
+
+          if (!etapa) {
+            alert('Por favor, seleccione el fuero o situación procesal de su caso.');
+            etapaSelect.focus();
+            return;
+          }
+
+          // Redacción sobria, estructurada y respetuosa para WhatsApp
+          let textoWa = `Estimada Dra. Tania Visintini,\n\n`;
+          textoWa += `Me contacto a través de su sitio web para solicitar una consulta profesional.\n\n`;
+          textoWa += `• Nombre: ${nombre}\n`;
+          textoWa += `• Teléfono de contacto: ${telefono}\n`;
+          textoWa += `• Situación procesal: ${etapa}\n`;
+
+          if (mensaje) {
+            textoWa += `• Detalle de la consulta: ${mensaje}\n\n`;
+          } else {
+            textoWa += `\n`;
+          }
+
+          textoWa += `Quedo a la espera de coordinar día y horario para una entrevista con cita previa. Muchas gracias.`;
+
+          const urlWa = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(textoWa)}`;
+          window.open(urlWa, '_blank');
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>

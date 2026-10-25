@@ -1,0 +1,10 @@
+# Entornos y temporales
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Archivos de respaldo y referencias de desarrollo
+index.backup.html
+_ui-ux-skill-ref/
+scratch/
